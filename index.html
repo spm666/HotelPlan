@@ -1,50 +1,36 @@
+# HotelPlan
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>名古屋ホテル比較一覧</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 40px;
         }
-
         h1 {
             text-align: center;
-            font-size: 1.5em;
         }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
         .hotel-table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 800px;
         }
-
         .hotel-table th, .hotel-table td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
-            font-size: 0.9em;
         }
-
         .hotel-table th {
             background-color: #f2f2f2;
         }
-
         .hotel-table tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-
         a {
             color: #0645AD;
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
         }
@@ -60,116 +46,101 @@
             z-index: 10;
             position: relative;
         }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.2em;
-            }
-
-            .hotel-img {
-                width: 60px;
-            }
-
-            .hotel-table th, .hotel-table td {
-                padding: 6px;
-                font-size: 0.8em;
-            }
-        }
     </style>
 </head>
 <body>
     <h1>名古屋ホテル比較一覧</h1>
-    <div class="table-container">
-        <table class="dataframe hotel-table">
-            <thead>
-                <tr>
-                    <th>画像</th>
-                    <th>ホテル名</th>
-                    <th>プラン名</th>
-                    <th>価格</th>
-                    <th>広さ</th>
-                    <th>⭐</th>
-                    <th>キャンセル期限</th>
-                    <th>Wi-Fi</th>
-                    <th>予約ID</th>
-                    <th>備考</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="https://grand-base.jp/grandbase/wp-content/uploads/2020/09/IMG_2893--scaled.jpg" alt="グランドベース 大須" class="hotel-img"></td>
-                    <td><a href="https://www.booking.com/hotel/jp/grand-base-osu.ja.html" target="_blank">グランドベース 大須</a></td>
-                    <td>クラシック トリプルルーム</td>
-                    <td>¥55,633</td>
-                    <td>40㎡</td>
-                    <td>8.6</td>
-                    <td>45853</td>
-                    <td>あり</td>
-                    <td>1609642640</td>
-                    <td>リンク開いた先の部屋タイプ【ｸﾗｼｯｸ ﾄﾘﾌﾟﾙﾙｰﾑ】</td>
-                </tr>
-                <tr>
-                    <td><img src="https://cdn.jalan.jp/jalan/images/pict2L/Y6/Y391366/Y391366016.jpg" alt="グランドベース 名古屋 千代倉" class="hotel-img"></td>
-                    <td><a href="https://chiyokura-hotel.com/room-introduction#btype" target="_blank">グランドベース 名古屋 千代倉</a></td>
-                    <td>1 X STANDARD B NON-SMOKING</td>
-                    <td>¥54,644</td>
-                    <td>30㎡</td>
-                    <td>8.4</td>
-                    <td>45849</td>
-                    <td>あり</td>
-                    <td>1609643164</td>
-                    <td>公式サイト スタンダードB</td>
-                </tr>
-                <tr>
-                    <td><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/284096600.jpg?k=7d4a927ae883761fefd4eea7be12121085b25eda88ea8507fab0040e371696fc&o=&hp=1" alt="大吉屋" class="hotel-img"></td>
-                    <td><a href="https://www.booking.com/hotel/jp/da-ji-wu.ja.html" target="_blank">大吉屋 ワンフロア貸切旅館名古屋駅圏内</a></td>
-                    <td>［和室］</td>
-                    <td>¥51,753</td>
-                    <td>105㎡</td>
-                    <td>8.7</td>
-                    <td>45851</td>
-                    <td>あり</td>
-                    <td>1613873383</td>
-                    <td>リンク開いた先の部屋タイプ【和室】10名</td>
-                </tr>
-                <tr>
-                    <td><img src="https://www.nagoya-info.jp/upload/accommodations/large/132672128062d9dea6f1056.jpg" alt="ゴールドステイ名古屋大須" class="hotel-img"></td>
-                    <td><a href="https://jp.hotels.com/ho3070881376/gold-stay-ming-gu-wu-da-xu-ming-gu-wu-shi-ri-ben/?propertyUnitRoomInfoDialog=room-info-324210203-8" target="_blank">ゴールドステイ名古屋大須</a></td>
-                    <td>Gallery Double Room, 2 Queen Beds</td>
-                    <td>¥49,293</td>
-                    <td>40㎡</td>
-                    <td>9.2</td>
-                    <td>45847</td>
-                    <td>あり</td>
-                    <td>1613872817</td>
-                    <td>画像が勝手に開くまで待ってね（公式より詳しい）</td>
-                </tr>
-                <tr>
-                    <td><img src="https://q-xx.bstatic.com/xdata/images/hotel/max500/674684332.jpg?k=4c62fef1d282f639d22a12716170c5cd2efd70044cc464517600658f3c28cbed&o=&s=1024x" alt="大曽根" class="hotel-img"></td>
-                    <td><a href="https://www.airbnb.jp/rooms/26477525?source_impression_id=p3_1748026815_P3PMj-lqRj5Xvi80&modal=PHOTO_TOUR_SCROLLABLE" target="_blank">大曽根駅から徒歩5分人工温泉が24時間楽しめてナゴヤドームまで徒歩で行く事が出来ます</a></td>
-                    <td>1ベッドルーム アパートメント</td>
-                    <td>¥41,815</td>
-                    <td>62㎡</td>
-                    <td>7.6</td>
-                    <td>45856</td>
-                    <td>あり</td>
-                    <td>1613874583</td>
-                    <td>名古屋版サカモトサウス</td>
-                </tr>
-                <tr>
-                    <td><img src="https://pix8.agoda.net/property/60498373/912157508/dd7c7bb00e814b13f9220b44b2bd404d.jpeg?ce=0&s=1024x" alt="SUN NAGATA" class="hotel-img"></td>
-                    <td><a href="https://www.booking.com/hotel/jp/sun-nagata-vacation-stay-17468.ja.html?activeTab=photosGallery" target="_blank">SUN NAGATA - Vacation STAY 17468</a></td>
-                    <td>Stylish 2LDK room</td>
-                    <td>¥37,233</td>
-                    <td>51㎡</td>
-                    <td>8.9</td>
-                    <td>45828</td>
-                    <td>あり</td>
-                    <td>1613876003</td>
-                    <td>ペット可なのが不安要素</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="dataframe hotel-table">
+        <thead>
+            <tr>
+                <th>画像</th>
+                <th>ホテル名</th>
+                <th>プラン名</th>
+                <th>価格</th>
+                <th>広さ</th>
+                <th>⭐</th>
+                <th>キャンセル期限</th>
+                <th>Wi-Fi</th>
+                <th>予約ID</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="https://grand-base.jp/grandbase/wp-content/uploads/2020/09/IMG_2893--scaled.jpg" alt="グランドベース 大須" class="hotel-img"></td>
+                <td><a href="https://www.booking.com/hotel/jp/grand-base-osu.ja.html" target="_blank">グランドベース 大須</a></td>
+                <td>クラシック トリプルルーム</td>
+                <td>¥55,633</td>
+                <td>40㎡</td>
+                <td>8.6</td>
+                <td>45853</td>
+                <td>あり</td>
+                <td>1609642640</td>
+                <td>リンク開いた先の部屋タイプ【ｸﾗｼｯｸ ﾄﾘﾌﾟﾙﾙｰﾑ】</td>
+            </tr>
+            <tr>
+                <td><img src="https://cdn.jalan.jp/jalan/images/pict2L/Y6/Y391366/Y391366016.jpg" alt="グランドベース 名古屋 千代倉" class="hotel-img"></td>
+                <td><a href="https://chiyokura-hotel.com/room-introduction#btype" target="_blank">グランドベース 名古屋 千代倉</a></td>
+                <td>1 X STANDARD B NON-SMOKING</td>
+                <td>¥54,644</td>
+                <td>30㎡</td>
+                <td>8.4</td>
+                <td>45849</td>
+                <td>あり</td>
+                <td>1609643164</td>
+                <td>公式サイト スタンダードB</td>
+            </tr>
+            <tr>
+                <td><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/284096600.jpg?k=7d4a927ae883761fefd4eea7be12121085b25eda88ea8507fab0040e371696fc&o=&hp=1" alt="大吉屋" class="hotel-img"></td>
+                <td><a href="https://www.booking.com/hotel/jp/da-ji-wu.ja.html" target="_blank">大吉屋 ワンフロア貸切旅館名古屋駅圏内</a></td>
+                <td>［和室］</td>
+                <td>¥51,753</td>
+                <td>105㎡</td>
+                <td>8.7</td>
+                <td>45851</td>
+                <td>あり</td>
+                <td>1613873383</td>
+                <td>リンク開いた先の部屋タイプ【和室】10名</td>
+            </tr>
+            <tr>
+                <td><img src="https://www.nagoya-info.jp/upload/accommodations/large/132672128062d9dea6f1056.jpg" alt="ゴールドステイ名古屋大須" class="hotel-img"></td>
+                <td><a href="https://jp.hotels.com/ho3070881376/gold-stay-ming-gu-wu-da-xu-ming-gu-wu-shi-ri-ben/?propertyUnitRoomInfoDialog=room-info-324210203-8" target="_blank">ゴールドステイ名古屋大須</a></td>
+                <td>Gallery Double Room, 2 Queen Beds</td>
+                <td>¥49,293</td>
+                <td>40㎡</td>
+                <td>9.2</td>
+                <td>45847</td>
+                <td>あり</td>
+                <td>1613872817</td>
+                <td>画像が勝手に開くまで待ってね（公式より詳しい）</td>
+            </tr>
+            <tr>
+                <td><img src="https://q-xx.bstatic.com/xdata/images/hotel/max500/674684332.jpg?k=4c62fef1d282f639d22a12716170c5cd2efd70044cc464517600658f3c28cbed&o=&s=1024x" alt="大曽根" class="hotel-img"></td>
+                <td><a href="https://www.airbnb.jp/rooms/26477525?source_impression_id=p3_1748026815_P3PMj-lqRj5Xvi80&modal=PHOTO_TOUR_SCROLLABLE" target="_blank">大曽根駅から徒歩5分人工温泉が24時間楽しめてナゴヤドームまで徒歩で行く事が出来ます</a></td>
+                <td>1ベッドルーム アパートメント</td>
+                <td>¥41,815</td>
+                <td>62㎡</td>
+                <td>7.6</td>
+                <td>45856</td>
+                <td>あり</td>
+                <td>1613874583</td>
+                <td>名古屋版サカモトサウス</td>
+            </tr>
+            <tr>
+                <td><img src="https://pix8.agoda.net/property/60498373/912157508/dd7c7bb00e814b13f9220b44b2bd404d.jpeg?ce=0&s=1024x" alt="SUN NAGATA" class="hotel-img"></td>
+                <td><a href="https://www.booking.com/hotel/jp/sun-nagata-vacation-stay-17468.ja.html?activeTab=photosGallery" target="_blank">SUN NAGATA - Vacation STAY 17468</a></td>
+                <td>Stylish 2LDK room</td>
+                <td>¥37,233</td>
+                <td>51㎡</td>
+                <td>8.9</td>
+                <td>45828</td>
+                <td>あり</td>
+                <td>1613876003</td>
+                <td>ペット可なのが不安要素</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
+
+
