@@ -22,10 +22,9 @@
             padding: 8px;
             text-align: center;
             vertical-align: middle;
-            overflow: visible; /* ここを visible にしてはみ出しOKに */
+            overflow: hidden;
             word-wrap: break-word;
             white-space: pre-line; /* 改行を反映させる */
-            position: relative;  /* 拡大時の重なり調整用 */
         }
         .hotel-table th {
             background-color: #f2f2f2;
@@ -47,19 +46,22 @@
             transition: transform 0.3s ease, z-index 0.3s ease;
             display: block;
             margin: 0 auto;
-            cursor: pointer;
-            /* transform-originを中央にすると拡大が見やすい */
-            transform-origin: center center;
         }
         td:hover .hotel-img {
             transform: scale(2);  /* 拡大時に2倍 */
             z-index: 10;
             position: relative;
         }
+        /* iframeの調整 */
         iframe {
-            width: 250px;
-            height: 150px;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            max-height: 150px;
             border: 0;
+            display: block;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
     </style>
 </head>
