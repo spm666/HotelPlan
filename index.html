@@ -24,7 +24,7 @@
             vertical-align: middle;
             overflow: hidden;
             word-wrap: break-word;
-            white-space: pre-line; /* 改行を反映させる */
+            white-space: pre-line; /* 改行を反映 */
         }
         .hotel-table th {
             background-color: #f2f2f2;
@@ -39,29 +39,25 @@
         a:hover {
             text-decoration: underline;
         }
-        /* 画像のサイズ調整 */
         .hotel-img {
-            width: 100%;      /* 通常時はセル幅いっぱい */
+            width: 100%;
             height: auto;
             transition: transform 0.3s ease, z-index 0.3s ease;
             display: block;
             margin: 0 auto;
         }
         td:hover .hotel-img {
-            transform: scale(2);  /* 拡大時に2倍 */
+            transform: scale(2);
             z-index: 10;
             position: relative;
         }
-        /* iframeの調整 */
         iframe {
             width: 100%;
             max-width: 250px;
-            height: auto;
-            max-height: 150px;
+            height: 150px;
             border: 0;
             display: block;
             margin: 0 auto;
-            box-sizing: border-box;
         }
     </style>
 </head>
@@ -77,8 +73,8 @@
                 <th>広さ</th>
                 <th>⭐</th>
                 <th>キャンセル期限</th>
-                <th>電車+徒歩</th>
                 <th>備考</th>
+                <th>電車+徒歩</th>
                 <th>Google Map</th>
             </tr>
         </thead>
@@ -94,8 +90,8 @@
                 <td>40㎡</td>
                 <td>8.6</td>
                 <td>7月15日</td>
-                <td>3+19</td>
                 <td>リンク開いた先の部屋タイプ【ｸﾗｼｯｸ ﾄﾘﾌﾟﾙﾙｰﾑ】</td>
+                <td>3+19</td>
                 <td>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6522.949133840912!2d136.88924879244698!3d35.16972266055388!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377ea36c56a19%3A0x68905dd773ce7d4d!2z44Kw44Op44Oz44OJ44OZ44O844K55aSn6aCI!5e0!3m2!1sja!2sjp!4v1748034606053!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </td>
@@ -111,8 +107,8 @@
                 <td>30㎡</td>
                 <td>8.4</td>
                 <td>7月11日</td>
-                <td>0+6</td>
                 <td>公式サイト スタンダードB</td>
+                <td>0+6</td>
                 <td>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3261.5411025466765!2d136.8737055!3d35.1680638!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003778a80aac9d5%3A0xa29d6969c7286948!2z44Kw44Op44Oz44OJ44OZ44O844K55ZCN5Y-k5bGLLeWNg-S7o-WAiS0!5e0!3m2!1sja!2sjp!4v1748034429778!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </td>
@@ -128,8 +124,8 @@
                 <td>105㎡</td>
                 <td>8.7</td>
                 <td>7月13日</td>
-                <td>5+9 (0+20)</td>
                 <td>リンク開いた先の部屋タイプ【和室】10名</td>
+                <td>5+9 (0+20)</td>
                 <td>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13046.164634793799!2d136.8659807!3d35.1680624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376f56e492b27%3A0xf914f7f04d2227d!2z5aSn5ZCJ5bGL5pys6aSo!5e0!3m2!1sja!2sjp!4v1748034475910!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </td>
@@ -145,8 +141,8 @@
                 <td>40㎡</td>
                 <td>9.2</td>
                 <td>7月9日</td>
-                <td>3+25</td>
                 <td>画像が勝手に開くまで待ってね（公式より詳しい）</td>
+                <td>3+25</td>
                 <td>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3262.0438916669345!2d136.8974332!3d35.1555261!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003777b419fb1bf%3A0x4a5106f53636bde6!2z44K044O844Or44OJ44K544OG44Kk5ZCN5Y-k5bGLIOWkp-mgiA!5e0!3m2!1sja!2sjp!4v1748034501130!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </td>
@@ -162,12 +158,53 @@
                 <td>62㎡</td>
                 <td>7.6</td>
                 <td>7月18日</td>
-                <td>12+12</td>
                 <td>名古屋版サカモトサウス</td>
+                <td>12+12</td>
                 <td>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13098.5531282868!2d136.9276663023117!3d35.18280813488414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377f94a0d1d7d%3A0x1db80a5bdbf255e6!2z44K544OJ44OL44OJ44OX44Oq44KS44Kw44Oq44OK44Kv44K444Oz44Or!5e0!3m2!1sja!2sjp!4v1748034558901!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </td>
             </tr>
+            <!-- 追加した最終行 -->
+            <tr>
+                <td><img src="https://a0.muscache.com/im/pictures/miso/Hosting-17468-image_hosting_2160x1440.jpg" alt="SUN NAGATA - Vacation STAY 17468" class="hotel-img" /></td>
+                <td><a href="https://www.airbnb.jp/rooms/17468" target="_blank">SUN NAGATA - Vacation STAY 17468</a></td>
+                <td>
+                    1ベッドルーム アパートメント<br />
+                    予約ID: 1613875600
+                </td>
+                <td>¥45,000</td>
+                <td>40㎡</td>
+                <td>8.0</td>
+                <td>7月20日</td>
+                <td>人気のバケーションレンタル</td>
+                <td>7+15</td>
+                <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13097.123456789012!2d136.9100000!3d35.1700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377e123456789%3A0xabcdef1234567890!2z44K544OJ44OJ44OS44OI44GX44Gq44K544Og44OI!5e0!3m2!1sja!2sjp!4v1748034600000!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </td>
+            </tr>
+            
+              <tr>
+        <td>
+          <img src="https://pix8.agoda.net/property/60498373/912157508/dd7c7bb00e814b13f9220b44b2bd404d.jpeg?ce=0&s=1024x" alt="SUN NAGATA - Vacation STAY 17468" class="hotel-img" />
+        </td>
+        <td>
+          <a href="https://www.airbnb.jp/rooms/17468" target="_blank">SUN NAGATA - Vacation STAY 17468</a>
+        </td>
+        <td>
+          1ベッドルーム アパートメント<br />
+          予約ID: 1613875600
+        </td>
+        <td>¥45,000</td>
+        <td>40㎡</td>
+        <td>8.0</td>
+        <td>7月20日</td>
+        <td>人気のバケーションレンタル</td>
+        <td>7+15</td>
+        <td>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13097.123456789012!2d136.9100000!3d35.1700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377e123456789%3A0xabcdef1234567890!2z44K544OJ44OJ44OS44OI44GX44Gq44K544Og44OI!5e0!3m2!1sja!2sjp!4v1748034600000!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </td>
+      </tr>
+      
         </tbody>
     </table>
 </body>
