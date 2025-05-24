@@ -1,13 +1,7 @@
-以下はホテル比較結果を共有するためにウェブサイトですが
-縦の行幅を揃えてください
- 
-
-
-# HotelPlan
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>名古屋ホテル比較一覧</title>
     <style>
         body {
@@ -20,11 +14,18 @@
         .hotel-table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed;
         }
-        .hotel-table th, .hotel-table td {
+        .hotel-table th,
+        .hotel-table td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
+            vertical-align: middle;
+            overflow: visible; /* ここを visible にしてはみ出しOKに */
+            word-wrap: break-word;
+            white-space: pre-line; /* 改行を反映させる */
+            position: relative;  /* 拡大時の重なり調整用 */
         }
         .hotel-table th {
             background-color: #f2f2f2;
@@ -39,109 +40,131 @@
         a:hover {
             text-decoration: underline;
         }
-
+        /* 画像のサイズ調整 */
         .hotel-img {
-            width: 80px;
+            width: 100%;      /* 通常時はセル幅いっぱい */
             height: auto;
             transition: transform 0.3s ease, z-index 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            /* transform-originを中央にすると拡大が見やすい */
+            transform-origin: center center;
         }
-
         td:hover .hotel-img {
-            transform: scale(2);
+            transform: scale(2);  /* 拡大時に2倍 */
             z-index: 10;
             position: relative;
+        }
+        iframe {
+            width: 250px;
+            height: 150px;
+            border: 0;
         }
     </style>
 </head>
 <body>
     <h1>名古屋ホテル比較一覧</h1>
-    <table class="dataframe hotel-table">
+    <table class="hotel-table">
         <thead>
             <tr>
                 <th>画像</th>
                 <th>ホテル名</th>
-                <th>プラン名</th>
+                <th>プラン名（予約ID）</th>
                 <th>価格</th>
                 <th>広さ</th>
                 <th>⭐</th>
                 <th>キャンセル期限</th>
-                <th>Wi-Fi</th>
-                <th>予約ID</th>
+                <th>電車+徒歩</th>
                 <th>備考</th>
+                <th>Google Map</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><img src="https://grand-base.jp/grandbase/wp-content/uploads/2020/09/IMG_2893--scaled.jpg" alt="グランドベース 大須" class="hotel-img"></td>
+                <td><img src="https://grand-base.jp/grandbase/wp-content/uploads/2020/09/IMG_2893--scaled.jpg" alt="グランドベース 大須" class="hotel-img" /></td>
                 <td><a href="https://www.booking.com/hotel/jp/grand-base-osu.ja.html" target="_blank">グランドベース 大須</a></td>
-                <td>クラシック トリプルルーム</td>
+                <td>
+                    クラシック トリプルルーム<br />
+                    予約ID: 1609642640
+                </td>
                 <td>¥55,633</td>
                 <td>40㎡</td>
                 <td>8.6</td>
-                <td>45853</td>
-                <td>あり</td>
-                <td>1609642640</td>
+                <td>7月15日</td>
+                <td>3+19</td>
                 <td>リンク開いた先の部屋タイプ【ｸﾗｼｯｸ ﾄﾘﾌﾟﾙﾙｰﾑ】</td>
+                <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6522.949133840912!2d136.88924879244698!3d35.16972266055388!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377ea36c56a19%3A0x68905dd773ce7d4d!2z44Kw44Op44Oz44OJ44OZ44O844K55aSn6aCI!5e0!3m2!1sja!2sjp!4v1748034606053!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </td>
             </tr>
             <tr>
-                <td><img src="https://cdn.jalan.jp/jalan/images/pict2L/Y6/Y391366/Y391366016.jpg" alt="グランドベース 名古屋 千代倉" class="hotel-img"></td>
+                <td><img src="https://cdn.jalan.jp/jalan/images/pict2L/Y6/Y391366/Y391366016.jpg" alt="グランドベース 名古屋 千代倉" class="hotel-img" /></td>
                 <td><a href="https://chiyokura-hotel.com/room-introduction#btype" target="_blank">グランドベース 名古屋 千代倉</a></td>
-                <td>1 X STANDARD B NON-SMOKING</td>
+                <td>
+                    1 X STANDARD B NON-SMOKING<br />
+                    予約ID: 1609643164
+                </td>
                 <td>¥54,644</td>
                 <td>30㎡</td>
                 <td>8.4</td>
-                <td>45849</td>
-                <td>あり</td>
-                <td>1609643164</td>
+                <td>7月11日</td>
+                <td>0+6</td>
                 <td>公式サイト スタンダードB</td>
+                <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3261.5411025466765!2d136.8737055!3d35.1680638!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003778a80aac9d5%3A0xa29d6969c7286948!2z44Kw44Op44Oz44OJ44OZ44O844K55ZCN5Y-k5bGLLeWNg-S7o-WAiS0!5e0!3m2!1sja!2sjp!4v1748034429778!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </td>
             </tr>
             <tr>
-                <td><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/284096600.jpg?k=7d4a927ae883761fefd4eea7be12121085b25eda88ea8507fab0040e371696fc&o=&hp=1" alt="大吉屋" class="hotel-img"></td>
+                <td><img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/284096600.jpg?k=7d4a927ae883761fefd4eea7be12121085b25eda88ea8507fab0040e371696fc&o=&hp=1" alt="大吉屋" class="hotel-img" /></td>
                 <td><a href="https://www.booking.com/hotel/jp/da-ji-wu.ja.html" target="_blank">大吉屋 ワンフロア貸切旅館名古屋駅圏内</a></td>
-                <td>［和室］</td>
+                <td>
+                    ［和室］<br />
+                    予約ID: 1613873383
+                </td>
                 <td>¥51,753</td>
                 <td>105㎡</td>
                 <td>8.7</td>
-                <td>45851</td>
-                <td>あり</td>
-                <td>1613873383</td>
+                <td>7月13日</td>
+                <td>5+9 (0+20)</td>
                 <td>リンク開いた先の部屋タイプ【和室】10名</td>
+                <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13046.164634793799!2d136.8659807!3d35.1680624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376f56e492b27%3A0xf914f7f04d2227d!2z5aSn5ZCJ5bGL5pys6aSo!5e0!3m2!1sja!2sjp!4v1748034475910!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </td>
             </tr>
             <tr>
-                <td><img src="https://www.nagoya-info.jp/upload/accommodations/large/132672128062d9dea6f1056.jpg" alt="ゴールドステイ名古屋大須" class="hotel-img"></td>
+                <td><img src="https://www.nagoya-info.jp/upload/accommodations/large/132672128062d9dea6f1056.jpg" alt="ゴールドステイ名古屋大須" class="hotel-img" /></td>
                 <td><a href="https://jp.hotels.com/ho3070881376/gold-stay-ming-gu-wu-da-xu-ming-gu-wu-shi-ri-ben/?propertyUnitRoomInfoDialog=room-info-324210203-8" target="_blank">ゴールドステイ名古屋大須</a></td>
-                <td>Gallery Double Room, 2 Queen Beds</td>
+                <td>
+                    Gallery Double Room, 2 Queen Beds<br />
+                    予約ID: 1613872817
+                </td>
                 <td>¥49,293</td>
                 <td>40㎡</td>
                 <td>9.2</td>
-                <td>45847</td>
-                <td>あり</td>
-                <td>1613872817</td>
+                <td>7月9日</td>
+                <td>3+25</td>
                 <td>画像が勝手に開くまで待ってね（公式より詳しい）</td>
+                <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3262.0438916669345!2d136.8974332!3d35.1555261!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003777b419fb1bf%3A0x4a5106f53636bde6!2z44K044O844Or44OJ44K544OG44Kk5ZCN5Y-k5bGLIOWkp-mgiA!5e0!3m2!1sja!2sjp!4v1748034501130!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </td>
             </tr>
             <tr>
-                <td><img src="https://q-xx.bstatic.com/xdata/images/hotel/max500/674684332.jpg?k=4c62fef1d282f639d22a12716170c5cd2efd70044cc464517600658f3c28cbed&o=&s=1024x" alt="大曽根" class="hotel-img"></td>
+                <td><img src="https://q-xx.bstatic.com/xdata/images/hotel/max500/674684332.jpg?k=4c62fef1d282f639d22a12716170c5cd2efd70044cc464517600658f3c28cbed&o=&s=1024x" alt="大曽根" class="hotel-img" /></td>
                 <td><a href="https://www.airbnb.jp/rooms/26477525?source_impression_id=p3_1748026815_P3PMj-lqRj5Xvi80&modal=PHOTO_TOUR_SCROLLABLE" target="_blank">大曽根駅から徒歩5分人工温泉が24時間楽しめてナゴヤドームまで徒歩で行く事が出来ます</a></td>
-                <td>1ベッドルーム アパートメント</td>
+                <td>
+                    1ベッドルーム アパートメント<br />
+                    予約ID: 1613874583
+                </td>
                 <td>¥41,815</td>
                 <td>62㎡</td>
                 <td>7.6</td>
-                <td>45856</td>
-                <td>あり</td>
-                <td>1613874583</td>
+                <td>7月18日</td>
+                <td>12+12</td>
                 <td>名古屋版サカモトサウス</td>
-            </tr>
-            <tr>
-                <td><img src="https://pix8.agoda.net/property/60498373/912157508/dd7c7bb00e814b13f9220b44b2bd404d.jpeg?ce=0&s=1024x" alt="SUN NAGATA" class="hotel-img"></td>
-                <td><a href="https://www.booking.com/hotel/jp/sun-nagata-vacation-stay-17468.ja.html?activeTab=photosGallery" target="_blank">SUN NAGATA - Vacation STAY 17468</a></td>
-                <td>Stylish 2LDK room</td>
-                <td>¥37,233</td>
-                <td>51㎡</td>
-                <td>8.9</td>
-                <td>45828</td>
-                <td>あり</td>
-                <td>1613876003</td>
-                <td>ペット可なのが不安要素</td>
+                <td>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13098.5531282868!2d136.9276663023117!3d35.18280813488414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377f94a0d1d7d%3A0x1db80a5bdbf255e6!2z44K544OJ44OL44OJ44OX44Oq44KS44Kw44Oq44OK44Kv44K444Oz44Or!5e0!3m2!1sja!2sjp!4v1748034558901!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </td>
             </tr>
         </tbody>
     </table>
